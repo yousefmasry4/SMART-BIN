@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "445085038755",
+    "firebase_url": "https://smart-bin-48c99-default-rtdb.firebaseio.com",
+    "project_id": "smart-bin-48c99",
+    "storage_bucket": "smart-bin-48c99.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:445085038755:android:60f3c1430f611912532716",
+        "android_client_info": {
+          "package_name": "me.jpryan.flutter_map_example"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "445085038755-pm7e2f1r8ndp9q2r6p0ssd2ar531jjdv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7lHd96Ub83VdReAIpg4jtuh7J-sUWVhE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "445085038755-pm7e2f1r8ndp9q2r6p0ssd2ar531jjdv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
