@@ -2,7 +2,10 @@
     package="me.jpryan.flutter_map_example">
     <!-- Requried for fetching tiles -->
     <uses-permission android:name="android.permission.INTERNET"/>
-   <application
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
         android:label="flutter_map_example"
         android:icon="@mipmap/ic_launcher">
         <activity

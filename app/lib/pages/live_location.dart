@@ -203,6 +203,7 @@ class _LiveLocationPageState extends State<LiveLocationPage>
         return FloatingActionButton(
           onPressed: () {
             setState(() {
+              _liveUpdate=!_liveUpdate;
               currentLatLng =
                   LatLng(_currentLocation.latitude, _currentLocation.longitude);
               if (_liveUpdate) {
@@ -210,10 +211,7 @@ class _LiveLocationPageState extends State<LiveLocationPage>
                     InteractiveFlag.pinchZoom |
                     InteractiveFlag.doubleTapZoom;
 
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                  content: Text(
-                      'In live update mode only zoom and rotation are enable'),
-                ));
+
                 markers[0] = Marker(
                   width: 80.0,
                   height: 80.0,
@@ -265,6 +263,7 @@ class _LiveLocationPageState extends State<LiveLocationPage>
                   ),
                   onTap: () {
                     setState(() {
+                      _liveUpdate=false;
                       k.add(xxx);
                     });
                   },
@@ -304,7 +303,8 @@ class _LiveLocationPageState extends State<LiveLocationPage>
                   Map data = snap.data.snapshot.value;
                   List item = [];
                   data.forEach(
-                      (index, data) => item.add({"id": index, ...data}));
+                      (index, data) => item.add({"id": index, ...data})
+                  );
 
                   print(item);
                   int i = -1;
@@ -312,16 +312,16 @@ class _LiveLocationPageState extends State<LiveLocationPage>
                     children: [
                       ...item.map((e) => k.contains(e["id"])? ListTile(
                             onTap: () {
-                              _animatedMapMove(LatLng(e["lat"], e["lang"]), 5.0);
+                              _animatedMapMove(LatLng(e["lat"]*1.0, e["lang"]*1.0), 5.0);
 
                               setState(() {
                                 markers[1] = Marker(
                                   width: 80.0,
                                   height: 80.0,
-                                  point: LatLng(e["lat"], e["lang"]),
+                                  point: LatLng( e["lat"]*1.0, e["lang"]*1.0),
                                   builder: (ctx) => Container(
                                     child: Icon(
-                                      Icons.directions_car_sharp,
+                                      Icons.delete,
                                       color: e["state"] == 1?Colors.red:Colors.green,
                                       size: 40,
                                     ),
